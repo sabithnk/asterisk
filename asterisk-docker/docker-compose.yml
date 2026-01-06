@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  asterisk:
+    image: andrius/asterisk:20
+    container_name: asterisk
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config:/etc/asterisk
+    command: asterisk -fvvv
